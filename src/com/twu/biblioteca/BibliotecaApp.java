@@ -7,7 +7,7 @@ public class BibliotecaApp {
     public static void main(String[] args) {
     }
 
-    public static String println(String message) {
+    public static void println(String message) {
         recentMessage = message;
         System.out.println(message);
     }
