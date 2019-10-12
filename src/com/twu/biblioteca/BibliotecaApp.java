@@ -14,6 +14,10 @@ public class BibliotecaApp {
 
     public static void startApp (InputStream in, PrintStream out) {
         showWelcomeMessage(out);
+        showMenu(out);
+    }
+
+    private static void showMenu(PrintStream out) {
         out.println("List of books");
     }
 
