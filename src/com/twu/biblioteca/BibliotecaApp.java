@@ -1,14 +1,24 @@
 package com.twu.biblioteca;
 
 
+import java.io.InputStream;
+import java.io.PrintStream;
+
 public class BibliotecaApp {
 
     public static void main(String[] args) {
-        showWelcomeMessage();
+        startApp(System.in, System.out);
+
     }
 
-    private static void showWelcomeMessage() {
-        System.out.println("Welcome to Biblioteca. You one-stop-shop for great book titles in Bangalore!");
+    public static void startApp (InputStream in, PrintStream out) {
+        showWelcomeMessage(out);
     }
+
+    private static void showWelcomeMessage(PrintStream out) {
+        out.println("Welcome to Biblioteca. You one-stop-shop for great book titles in Bangalore!");
+    }
+
+
 
 }
