@@ -32,6 +32,8 @@ public class BibliotecaAppTest {
     @Test
     public void shouldHaveWelcomeMessage() {
         BibliotecaApp.main(new String[] {});
-        assertEquals("Welcome to Biblioteca. You one-stop-shop for great book titles in Bangalore!", BibliotecaApp.recentMessage);
+        String[] outLines = outContent.toString().split("\n");
+        assertEquals("Welcome to Biblioteca. You one-stop-shop for great book titles in Bangalore!", outLines[0]);
     }
+
 }
