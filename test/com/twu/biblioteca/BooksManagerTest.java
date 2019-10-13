@@ -25,7 +25,6 @@ public class BooksManagerTest {
 
     @Test
     public void shouldReturnAllBooks() {
-        List<String> allBooks = booksManager.getBooksList();
-        assertEquals(listOfBooks, allBooks);
+        assertEquals(listOfBooks, booksManager.getBooksList());
     }
 }
