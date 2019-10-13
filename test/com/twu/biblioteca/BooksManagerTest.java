@@ -20,11 +20,18 @@ public class BooksManagerTest {
         listOfBooks = new ArrayList<String>();
         listOfBooks.add("Refactoring,Kent Beck and Martin Fowler,1999");
         listOfBooks.add("Agile samurai,Jonathan Rasmusson,2010");
-        booksManager = new BooksManager(listOfBooks);
+        booksManager = new BooksManager(new ArrayList<String>(listOfBooks));
     }
 
     @Test
     public void shouldReturnAllBooks() {
+        assertEquals(listOfBooks, booksManager.getBooksList());
+    }
+
+    @Test
+    public void shouldRemoveCheckedOutBookFromList() {
+        listOfBooks.remove("Refactoring,Kent Beck and Martin Fowler,1999");
+        booksManager.checkOutBook("Refactoring");
         assertEquals(listOfBooks, booksManager.getBooksList());
     }
 }

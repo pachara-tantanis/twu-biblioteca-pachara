@@ -15,4 +15,8 @@ public class BooksManager {
         return  this.listsOfBooks;
     }
 
+    public void checkOutBook(String book) {
+
+    }
+
 }
