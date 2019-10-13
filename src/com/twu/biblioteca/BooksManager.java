@@ -15,7 +15,7 @@ public class BooksManager {
         return this.listsOfBooks;
     }
 
-    public void checkOutBook(String bookName) {
+    public String checkOutBook(String bookName) {
         for (int i = 0; i < this.listsOfBooks.size(); i++) {
             String[] bookInfo = this.listsOfBooks.get(i).split(",");
 
@@ -24,6 +24,7 @@ public class BooksManager {
                 break;
             }
         }
+        return "";
     }
 
 }

@@ -34,4 +34,12 @@ public class BooksManagerTest {
         booksManager.checkOutBook("Refactoring");
         assertEquals(listOfBooks, booksManager.getBooksList());
     }
+
+    @Test
+    public void shouldReturnSuccessMessageOnCheckOutComplete() {
+        String message = booksManager.checkOutBook("Refactoring");
+        assertEquals("Thank you! Enjoy the book", message);
+    }
+
+
 }
