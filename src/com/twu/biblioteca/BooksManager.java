@@ -21,7 +21,7 @@ public class BooksManager {
 
             if (bookInfo[0].equals(bookName)) {
                 this.listsOfBooks.remove(i);
-                break;
+                return "Thank you! Enjoy the book";
             }
         }
         return "";
