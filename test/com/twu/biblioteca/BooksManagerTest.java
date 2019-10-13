@@ -41,5 +41,11 @@ public class BooksManagerTest {
         assertEquals("Thank you! Enjoy the book", message);
     }
 
+    @Test
+    public void shouldReturnUnSuccessMessageOnCheckOutFail() {
+        String message = booksManager.checkOutBook("UnSuccess");
+        assertEquals("Sorry, that book is not available", message);
+    }
+
 
 }
