@@ -1,12 +1,12 @@
 package com.twu.biblioteca;
 
 import static org.junit.Assert.assertEquals;
+
 import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
-
 
 
 public class BooksManagerTest {
@@ -29,7 +29,7 @@ public class BooksManagerTest {
     }
 
     @Test
-    public void shouldRemoveCheckedOutBookFromList() {
+    public void shouldRemoveCheckedOutBookFromListOfBooks() {
         listOfBooks.remove("Refactoring,Kent Beck and Martin Fowler,1999");
         booksManager.checkOutBook("Refactoring");
         assertEquals(listOfBooks, booksManager.getBooksList());
@@ -37,15 +37,19 @@ public class BooksManagerTest {
 
     @Test
     public void shouldReturnSuccessMessageOnCheckOutComplete() {
-        String message = booksManager.checkOutBook("Refactoring");
-        assertEquals("Thank you! Enjoy the book", message);
+        String successMessage = booksManager.checkOutBook("Refactoring");
+        assertEquals("Thank you! Enjoy the book", successMessage);
     }
 
     @Test
     public void shouldReturnUnSuccessMessageOnCheckOutFail() {
-        String message = booksManager.checkOutBook("UnSuccess");
-        assertEquals("Sorry, that book is not available", message);
+        String unSuccessMessage = booksManager.checkOutBook("UnSuccess");
+        assertEquals("Sorry, that book is not available", unSuccessMessage);
     }
-
+//
+//    @Test
+//    public void shouldReturnUnSuccessMessageOnBookReturnFail() {
+//        String message
+//    }
 
 }

@@ -27,4 +27,8 @@ public class BooksManager {
         return "Sorry, that book is not available";
     }
 
+    public String returnBook(String bookName) {
+        return "";
+    }
+
 }
