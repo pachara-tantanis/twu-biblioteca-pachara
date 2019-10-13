@@ -12,11 +12,18 @@ public class BooksManager {
     }
 
     public List<String> getBooksList() {
-        return  this.listsOfBooks;
+        return this.listsOfBooks;
     }
 
-    public void checkOutBook(String book) {
+    public void checkOutBook(String bookName) {
+        for (int i = 0; i < this.listsOfBooks.size(); i++) {
+            String[] bookInfo = this.listsOfBooks.get(i).split(",");
 
+            if (bookInfo[0].equals(bookName)) {
+                this.listsOfBooks.remove(i);
+                break;
+            }
+        }
     }
 
 }

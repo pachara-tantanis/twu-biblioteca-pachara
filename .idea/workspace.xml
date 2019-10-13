@@ -4,9 +4,7 @@
     <list default="true" id="f6d51d35-5021-4393-a2d6-86b80fcf7384" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/biblioteca/com/twu/biblioteca/BooksManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/biblioteca/com/twu/biblioteca/BooksManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/biblioteca/com/twu/biblioteca/BooksManagerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/biblioteca/com/twu/biblioteca/BooksManagerTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/BooksManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/BooksManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/com/twu/biblioteca/BooksManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/com/twu/biblioteca/BooksManagerTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -54,7 +52,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.BooksManagerTest.shouldRemoveCheckedOutBookFromList">
+  <component name="RunManager" selected="JUnit.BooksManagerTest">
     <configuration name="BibliotecaAppTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="biblioteca" />
       <extension name="coverage">
@@ -135,8 +133,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.BooksManagerTest.shouldRemoveCheckedOutBookFromList" />
         <item itemvalue="JUnit.BooksManagerTest" />
+        <item itemvalue="JUnit.BooksManagerTest.shouldRemoveCheckedOutBookFromList" />
         <item itemvalue="JUnit.BooksManagerTest.shouldReturnAllBooks" />
         <item itemvalue="JUnit.BibliotecaAppTest" />
         <item itemvalue="JUnit.BibliotecaAppTest.shouldShowMenu" />
@@ -155,7 +153,7 @@
       <updated>1570776202383</updated>
       <workItem from="1570776204472" duration="847000" />
       <workItem from="1570778237676" duration="4704000" />
-      <workItem from="1570873239966" duration="12619000" />
+      <workItem from="1570873239966" duration="13985000" />
     </task>
     <servers />
   </component>
