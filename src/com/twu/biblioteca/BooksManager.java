@@ -12,7 +12,7 @@ public class BooksManager {
     }
 
     public List<String> getBooksList() {
-        return  new ArrayList<String>();
+        return  this.listsOfBooks;
     }
 
 }
