@@ -24,7 +24,7 @@ public class BooksManager {
                 return "Thank you! Enjoy the book";
             }
         }
-        return "";
+        return "Sorry, that book is not available";
     }
 
 }
