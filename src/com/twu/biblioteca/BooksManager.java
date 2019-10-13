@@ -28,7 +28,7 @@ public class BooksManager {
     }
 
     public String returnBook(String bookName) {
-        return "";
+        return "This is not a valid book to return.";
     }
 
 }
