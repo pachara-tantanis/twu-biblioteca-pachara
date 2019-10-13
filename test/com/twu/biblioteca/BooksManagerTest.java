@@ -18,8 +18,8 @@ public class BooksManagerTest {
     @Before
     public void createBooksManager() {
         listOfBooks = new ArrayList<String>();
-        listOfBooks.add("Refactoring");
-        listOfBooks.add("Agile samurai");
+        listOfBooks.add("Refactoring,Kent Beck and Martin Fowler,1999");
+        listOfBooks.add("Agile samurai,Jonathan Rasmusson,2010");
         booksManager = new BooksManager(listOfBooks);
     }
 
