@@ -53,4 +53,10 @@ public class BooksManagerTest {
         assertEquals("This is not a valid book to return.", returnFailMessage);
     }
 
+    @Test
+    public void shouldReturnSuccessMessageOnBookReturnComplete() {
+        booksManager.checkOutBook("Refactoring");
+        String successMessage = booksManager.returnBook("Refactoring");
+        assertEquals("Thank you for returning the book", successMessage);
+    }
 }
