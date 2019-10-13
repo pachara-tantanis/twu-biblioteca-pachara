@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="f6d51d35-5021-4393-a2d6-86b80fcf7384" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/BooksManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/BooksManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/com/twu/biblioteca/BooksManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/com/twu/biblioteca/BooksManagerTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -52,7 +51,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.BooksManagerTest">
+  <component name="RunManager" selected="JUnit.BooksManagerTest.shouldReturnUnSuccessMessageOnBookReturnFail">
     <configuration name="BooksManagerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="biblioteca" />
       <extension name="coverage">
@@ -84,22 +83,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BooksManagerTest.shouldReturnAllBooks" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="biblioteca" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.twu.biblioteca.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.twu.biblioteca" />
-      <option name="MAIN_CLASS_NAME" value="com.twu.biblioteca.BooksManagerTest" />
-      <option name="METHOD_NAME" value="shouldReturnAllBooks" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="BooksManagerTest.shouldReturnSuccessMessageOnCheckOutComplete" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="biblioteca" />
       <extension name="coverage">
@@ -111,6 +94,22 @@
       <option name="PACKAGE_NAME" value="com.twu.biblioteca" />
       <option name="MAIN_CLASS_NAME" value="com.twu.biblioteca.BooksManagerTest" />
       <option name="METHOD_NAME" value="shouldReturnSuccessMessageOnCheckOutComplete" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BooksManagerTest.shouldReturnUnSuccessMessageOnBookReturnFail" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="biblioteca" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.twu.biblioteca.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.twu.biblioteca" />
+      <option name="MAIN_CLASS_NAME" value="com.twu.biblioteca.BooksManagerTest" />
+      <option name="METHOD_NAME" value="shouldReturnUnSuccessMessageOnBookReturnFail" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -134,11 +133,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.BooksManagerTest.shouldReturnUnSuccessMessageOnBookReturnFail" />
         <item itemvalue="JUnit.BooksManagerTest" />
         <item itemvalue="JUnit.BooksManagerTest.shouldReturnUnSuccessMessageOnCheckOutFail" />
         <item itemvalue="JUnit.BooksManagerTest.shouldReturnSuccessMessageOnCheckOutComplete" />
         <item itemvalue="JUnit.BooksManagerTest.shouldRemoveCheckedOutBookFromList" />
-        <item itemvalue="JUnit.BooksManagerTest.shouldReturnAllBooks" />
       </list>
     </recent_temporary>
   </component>
@@ -154,7 +153,7 @@
       <updated>1570776202383</updated>
       <workItem from="1570776204472" duration="847000" />
       <workItem from="1570778237676" duration="4704000" />
-      <workItem from="1570873239966" duration="16984000" />
+      <workItem from="1570873239966" duration="17485000" />
     </task>
     <servers />
   </component>

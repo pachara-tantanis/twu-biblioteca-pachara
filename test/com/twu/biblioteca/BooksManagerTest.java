@@ -46,10 +46,11 @@ public class BooksManagerTest {
         String unSuccessMessage = booksManager.checkOutBook("UnSuccess");
         assertEquals("Sorry, that book is not available", unSuccessMessage);
     }
-//
-//    @Test
-//    public void shouldReturnUnSuccessMessageOnBookReturnFail() {
-//        String message
-//    }
+
+    @Test
+    public void shouldReturnUnSuccessMessageOnBookReturnFail() {
+        String returnFailMessage = booksManager.returnBook("ReturnFail");
+        assertEquals("This is not a valid book to return.", returnFailMessage);
+    }
 
 }
