@@ -1,7 +1,18 @@
 package com.twu.biblioteca;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class BooksManager {
 
-    public BooksManager() {
+    private List<String> listsOfBooks;
+
+    public BooksManager(List<String> listOfBooks) {
+        this.listsOfBooks = listOfBooks;
     }
+
+    public List<String> getBooksList() {
+        return  new ArrayList<String>();
+    }
+
 }
