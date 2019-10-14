@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f6d51d35-5021-4393-a2d6-86b80fcf7384" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/biblioteca/com/twu/biblioteca/BibliotecaApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/biblioteca/com/twu/biblioteca/BibliotecaApp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/biblioteca/com/twu/biblioteca/BibliotecaAppTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/biblioteca/com/twu/biblioteca/BibliotecaAppTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/listOfBooks" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/listOfBooks.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/listOfBooks.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/listOfBooks.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -153,7 +149,7 @@
       <updated>1570776202383</updated>
       <workItem from="1570776204472" duration="847000" />
       <workItem from="1570778237676" duration="4704000" />
-      <workItem from="1570873239966" duration="29000000" />
+      <workItem from="1570873239966" duration="29065000" />
     </task>
     <servers />
   </component>

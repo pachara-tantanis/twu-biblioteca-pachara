@@ -1,3 +1,3 @@
-Refactoring
-Python programming
-Agile samurai
+Refactoring,Kent Beck and Martin Fowler,1999
+Python programming,somchai,2015
+Agile samurai,Jonathan Rasmusson,2010
