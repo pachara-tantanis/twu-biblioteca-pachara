@@ -79,7 +79,7 @@ public class BibliotecaAppTest {
     @Test
     public void shouldCallCheckOutGivenCheckOutBookName() {
         MockBookManager mockBookManager = new MockBookManager(new ArrayList<String>());
-        ByteArrayInputStream inStream = new ByteArrayInputStream("List of books".getBytes());
+        ByteArrayInputStream inStream = new ByteArrayInputStream("check-out Refactoring".getBytes());
         BibliotecaApp.startApp(inStream, out, mockBookManager);
         assertTrue(mockBookManager.checkOutCalled);
     }
