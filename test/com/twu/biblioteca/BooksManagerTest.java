@@ -54,6 +54,13 @@ public class BooksManagerTest {
     }
 
     @Test
+    public void shouldHaveReturnedBookInlistOfBooks() {
+        booksManager.checkOutBook("Refactoring");
+        booksManager.returnBook("Refactoring");
+        assertEquals(true, booksManager.getBooksList().contains("Refactoring,Kent Beck and Martin Fowler,1999"));
+    }
+
+    @Test
     public void shouldReturnSuccessMessageOnBookReturnComplete() {
         booksManager.checkOutBook("Refactoring");
         String successMessage = booksManager.returnBook("Refactoring");
