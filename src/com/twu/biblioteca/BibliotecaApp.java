@@ -22,19 +22,22 @@ public class BibliotecaApp {
         showWelcomeMessage(out);
         showMenu(out);
         Scanner scannerIn = new Scanner(in);
-        String command = scannerIn.nextLine();
-        String[] splitCommand = command.split(" ");
-        if (command.equals("List of books")) {
-            List<String> listOfBooks = booksManager.getBooksList();
-            listOfBooks.forEach(book -> out.println(book));
-        } else if (splitCommand[0].equals("check-out")) {
-            String[] bookName = Arrays.copyOfRange(splitCommand, 1, splitCommand.length);
-            out.println(booksManager.checkOutBook(String.join(" ", bookName)));
-        } else if (splitCommand[0].equals("return")) {
-            String[] bookName = Arrays.copyOfRange(splitCommand, 1, splitCommand.length);
-            out.println(booksManager.returnBook(String.join(" ", bookName)));
-        } else {
-            out.println("Please select a valid option!");
+        String command = "";
+        while (scannerIn.hasNextLine()) {
+            command = scannerIn.nextLine();
+            String[] splitCommand = command.split(" ");
+            if (command.equals("List of books")) {
+                List<String> listOfBooks = booksManager.getBooksList();
+                listOfBooks.forEach(book -> out.println(book));
+            } else if (splitCommand[0].equals("check-out")) {
+                String[] bookName = Arrays.copyOfRange(splitCommand, 1, splitCommand.length);
+                out.println(booksManager.checkOutBook(String.join(" ", bookName)));
+            } else if (splitCommand[0].equals("return")) {
+                String[] bookName = Arrays.copyOfRange(splitCommand, 1, splitCommand.length);
+                out.println(booksManager.returnBook(String.join(" ", bookName)));
+            } else {
+                out.println("Please select a valid option!");
+            }
         }
     }
 
@@ -47,7 +50,6 @@ public class BibliotecaApp {
                 listOfBooks.add(line);
             }
         } catch (Exception e) {
-
         }
         return listOfBooks;
     }
