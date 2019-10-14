@@ -13,6 +13,7 @@ import java.util.List;
 import static org.junit.Assert.assertEquals;
 
 public class BibliotecaAppTest {
+    public ByteArrayInputStream inputStream;
     public ByteArrayOutputStream outStream;
     public PrintStream out;
 
@@ -21,6 +22,7 @@ public class BibliotecaAppTest {
 
     @Before
     public void createMockOutput() {
+        inputStream = new ByteArrayInputStream("Quit".getBytes());
         outStream = new ByteArrayOutputStream();
         out = new PrintStream(outStream);
 
@@ -34,7 +36,7 @@ public class BibliotecaAppTest {
 
     @Test
     public void shouldHaveWelcomeMessageAtFirstLine() {
-        BibliotecaApp.startApp(System.in, out, booksManager);
+        BibliotecaApp.startApp(inputStream, out, booksManager);
 
         String[] outLines = outStream.toString().split("\n");
         assertEquals("Welcome to Biblioteca. You one-stop-shop for great book titles in Bangalore!", outLines[0]);
@@ -42,7 +44,7 @@ public class BibliotecaAppTest {
 
     @Test
     public void shouldShowMenu() {
-        BibliotecaApp.startApp(System.in, out, booksManager);
+        BibliotecaApp.startApp(inputStream, out, booksManager);
 
         String[] outLines = outStream.toString().split("\n");
         assertEquals("List of books", outLines[1]);
@@ -56,7 +58,6 @@ public class BibliotecaAppTest {
         String[] outLines = outStream.toString().split("\n");
         String[] outListOfBooks = Arrays.copyOfRange(outLines, 2,outLines.length);
         assertEquals(listOfBook, Arrays.asList(outListOfBooks));
-
     }
 
 
