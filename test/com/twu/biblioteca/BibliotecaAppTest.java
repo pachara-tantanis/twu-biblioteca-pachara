@@ -11,8 +11,24 @@ import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class BibliotecaAppTest {
+
+    class MockBookManager extends BooksManager {
+        public Boolean checkOutCalled = false;
+
+        public MockBookManager(List<String> listOfBooks) {
+            super(listOfBooks);
+        }
+
+        @Override
+        public String checkOutBook(String bookName) {
+            checkOutCalled = true;
+            return "";
+        }
+    }
+
     public ByteArrayInputStream inputStream;
     public ByteArrayOutputStream outStream;
     public PrintStream out;
@@ -60,5 +76,12 @@ public class BibliotecaAppTest {
         assertEquals(listOfBook, Arrays.asList(outListOfBooks));
     }
 
+    @Test
+    public void shouldCallCheckOutGivenCheckOutBookName() {
+        MockBookManager mockBookManager = new MockBookManager(new ArrayList<String>());
+        ByteArrayInputStream inStream = new ByteArrayInputStream("List of books".getBytes());
+        BibliotecaApp.startApp(inStream, out, mockBookManager);
+        assertTrue(mockBookManager.checkOutCalled);
+    }
 
 }
