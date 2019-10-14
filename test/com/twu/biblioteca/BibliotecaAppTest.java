@@ -3,24 +3,38 @@ package com.twu.biblioteca;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
 public class BibliotecaAppTest {
     public ByteArrayOutputStream outStream;
     public PrintStream out;
+
+    public List<String> listOfBook;
+    public BooksManager booksManager;
+
     @Before
     public void createMockOutput() {
         outStream = new ByteArrayOutputStream();
         out = new PrintStream(outStream);
+
+        listOfBook = new ArrayList<String>();
+        listOfBook.add("Book A,John,1999");
+        listOfBook.add("Book B,Alis,2010");
+        booksManager = new BooksManager(listOfBook);
+
     }
 
 
     @Test
     public void shouldHaveWelcomeMessageAtFirstLine() {
-        BibliotecaApp.startApp(System.in, out);
+        BibliotecaApp.startApp(System.in, out, booksManager);
 
         String[] outLines = outStream.toString().split("\n");
         assertEquals("Welcome to Biblioteca. You one-stop-shop for great book titles in Bangalore!", outLines[0]);
@@ -28,12 +42,22 @@ public class BibliotecaAppTest {
 
     @Test
     public void shouldShowMenu() {
-        BibliotecaApp.startApp(System.in, out);
+        BibliotecaApp.startApp(System.in, out, booksManager);
 
         String[] outLines = outStream.toString().split("\n");
         assertEquals("List of books", outLines[1]);
     }
 
+    @Test
+    public void shouldReturnListOfBookGivenListOfBook() {
+        ByteArrayInputStream inStream = new ByteArrayInputStream("List of books".getBytes());
+
+        BibliotecaApp.startApp(inStream, out, booksManager);
+        String[] outLines = outStream.toString().split("\n");
+        String[] outListOfBooks = Arrays.copyOfRange(outLines, 2,outLines.length);
+        assertEquals(listOfBook, Arrays.asList(outListOfBooks));
+
+    }
 
 
 }

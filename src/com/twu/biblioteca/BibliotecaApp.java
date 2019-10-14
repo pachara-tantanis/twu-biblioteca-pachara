@@ -5,14 +5,16 @@ import jdk.nashorn.internal.objects.annotations.Function;
 
 import java.io.InputStream;
 import java.io.PrintStream;
+import java.util.ArrayList;
 
 public class BibliotecaApp {
 
     public static void main(String[] args) {
-        startApp(System.in, System.out);
+        BooksManager booksManager = new BooksManager(new ArrayList<String>());
+        startApp(System.in, System.out, booksManager);
     }
 
-    public static void startApp (InputStream in, PrintStream out) {
+    public static void startApp (InputStream in, PrintStream out, BooksManager booksManager) {
         showWelcomeMessage(out);
         showMenu(out);
     }
