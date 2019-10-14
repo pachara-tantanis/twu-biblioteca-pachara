@@ -17,6 +17,7 @@ public class BibliotecaAppTest {
 
     class MockBookManager extends BooksManager {
         public Boolean checkOutCalled = false;
+        public Boolean returnBookCalled = false;
 
         public MockBookManager(List<String> listOfBooks) {
             super(listOfBooks);
@@ -25,6 +26,12 @@ public class BibliotecaAppTest {
         @Override
         public String checkOutBook(String bookName) {
             checkOutCalled = true;
+            return "";
+        }
+
+        @Override
+        public String returnBook(String bookName) {
+            returnBookCalled = true;
             return "";
         }
     }
@@ -84,4 +91,12 @@ public class BibliotecaAppTest {
         assertTrue(mockBookManager.checkOutCalled);
     }
 
+
+    @Test
+    public void shouldCallReturnBookGivenReturnBookCommand() {
+        MockBookManager mockBookManager = new MockBookManager(new ArrayList<String>());
+        ByteArrayInputStream inStream = new ByteArrayInputStream("return Refactoring".getBytes());
+        BibliotecaApp.startApp(inStream, out, mockBookManager);
+        assertTrue(mockBookManager.returnBookCalled);
+    }
 }
