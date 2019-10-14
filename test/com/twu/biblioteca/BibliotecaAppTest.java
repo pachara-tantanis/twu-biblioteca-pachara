@@ -100,7 +100,7 @@ public class BibliotecaAppTest {
     }
 
     @Test
-    public void shouldNotfiedIfGivenInvalidOption() {
+    public void shouldNotifiedIfGivenInvalidOption() {
         ByteArrayInputStream inStream = new ByteArrayInputStream("Invalid Option".getBytes());
 
         BibliotecaApp.startApp(inStream, out, booksManager);
@@ -108,4 +108,5 @@ public class BibliotecaAppTest {
         String notifiedMessage = outLines[2];
         assertEquals("Please select a valid option!", notifiedMessage);
     }
+
 }

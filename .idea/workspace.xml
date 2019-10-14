@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f6d51d35-5021-4393-a2d6-86b80fcf7384" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/com/twu/biblioteca/BibliotecaAppTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/com/twu/biblioteca/BibliotecaAppTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -98,7 +98,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BibliotecaAppTest.shouldNotfiedIfGivenInvalidOption" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BibliotecaAppTest.shouldNotifiedIfGivenInvalidOption" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="biblioteca" />
       <extension name="coverage">
         <pattern>
@@ -108,7 +108,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.twu.biblioteca" />
       <option name="MAIN_CLASS_NAME" value="com.twu.biblioteca.BibliotecaAppTest" />
-      <option name="METHOD_NAME" value="shouldNotfiedIfGivenInvalidOption" />
+      <option name="METHOD_NAME" value="shouldNotifiedIfGivenInvalidOption" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -133,7 +133,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.BibliotecaAppTest" />
-        <item itemvalue="JUnit.BibliotecaAppTest.shouldNotfiedIfGivenInvalidOption" />
+        <item itemvalue="JUnit.BibliotecaAppTest.shouldNotifiedIfGivenInvalidOption" />
         <item itemvalue="JUnit.BibliotecaAppTest.shouldCallReturnBookGivenReturnBookCommand" />
         <item itemvalue="JUnit.BibliotecaAppTest.shouldCallCheckOutGivenCheckOutBookName" />
         <item itemvalue="JUnit.BibliotecaAppTest.shouldReturnListOfBookGivenListOfBook" />
@@ -152,7 +152,7 @@
       <updated>1570776202383</updated>
       <workItem from="1570776204472" duration="847000" />
       <workItem from="1570778237676" duration="4704000" />
-      <workItem from="1570873239966" duration="28078000" />
+      <workItem from="1570873239966" duration="28181000" />
     </task>
     <servers />
   </component>
