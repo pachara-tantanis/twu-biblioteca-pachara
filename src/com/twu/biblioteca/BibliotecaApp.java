@@ -35,6 +35,8 @@ public class BibliotecaApp {
             } else if (splitCommand[0].equals("return")) {
                 String[] bookName = Arrays.copyOfRange(splitCommand, 1, splitCommand.length);
                 out.println(booksManager.returnBook(String.join(" ", bookName)));
+            } else if (command.equals("Quit")) {
+                return "quit";
             } else {
                 out.println("Please select a valid option!");
             }
@@ -45,7 +47,7 @@ public class BibliotecaApp {
     public static List<String> readListOfBooks() {
         List<String> listOfBooks = new ArrayList<String>();
         try {
-        BufferedReader bufferedReader = new BufferedReader(new FileReader("/Users/pacharatantanis/Documents/twu/TWU_Biblioteca-master/src/com/twu/biblioteca/listOfBooks.txt"));
+            BufferedReader bufferedReader = new BufferedReader(new FileReader("/Users/pacharatantanis/Documents/twu/TWU_Biblioteca-master/src/com/twu/biblioteca/listOfBooks.txt"));
             String line = "";
             while ((line = bufferedReader.readLine()) != null) {
                 listOfBooks.add(line);
