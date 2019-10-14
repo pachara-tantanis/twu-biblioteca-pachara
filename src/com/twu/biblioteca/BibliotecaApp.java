@@ -3,8 +3,7 @@ package com.twu.biblioteca;
 
 import jdk.nashorn.internal.objects.annotations.Function;
 
-import java.io.InputStream;
-import java.io.PrintStream;
+import java.io.*;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -15,7 +14,7 @@ import java.util.function.IntConsumer;
 public class BibliotecaApp {
 
     public static void main(String[] args) {
-        BooksManager booksManager = new BooksManager(new ArrayList<String>());
+        BooksManager booksManager = new BooksManager(readListOfBooks());
         startApp(System.in, System.out, booksManager);
     }
 
@@ -37,6 +36,20 @@ public class BibliotecaApp {
         } else {
             out.println("Please select a valid option!");
         }
+    }
+
+    public static List<String> readListOfBooks() {
+        List<String> listOfBooks = new ArrayList<String>();
+        try {
+        BufferedReader bufferedReader = new BufferedReader(new FileReader("/Users/pacharatantanis/Documents/twu/TWU_Biblioteca-master/src/com/twu/biblioteca/listOfBooks.txt"));
+            String line = "";
+            while ((line = bufferedReader.readLine()) != null) {
+                listOfBooks.add(line);
+            }
+        } catch (Exception e) {
+
+        }
+        return listOfBooks;
     }
 
     private static void showMenu(PrintStream out) {
