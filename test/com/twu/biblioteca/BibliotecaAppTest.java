@@ -109,5 +109,10 @@ public class BibliotecaAppTest {
         assertEquals("Please select a valid option!", notifiedMessage);
     }
 
+    @Test
+    public void shouldQuitGivenQuit() {
+        String quitMessage = BibliotecaApp.startApp(inputStream, out, booksManager);
+        assertEquals("quit", quitMessage);
+    }
 
 }

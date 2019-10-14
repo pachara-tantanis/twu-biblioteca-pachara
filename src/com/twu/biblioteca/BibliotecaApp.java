@@ -18,7 +18,7 @@ public class BibliotecaApp {
         startApp(System.in, System.out, booksManager);
     }
 
-    public static void startApp(InputStream in, PrintStream out, BooksManager booksManager) {
+    public static String startApp(InputStream in, PrintStream out, BooksManager booksManager) {
         showWelcomeMessage(out);
         showMenu(out);
         Scanner scannerIn = new Scanner(in);
@@ -39,6 +39,7 @@ public class BibliotecaApp {
                 out.println("Please select a valid option!");
             }
         }
+        return "";
     }
 
     public static List<String> readListOfBooks() {
