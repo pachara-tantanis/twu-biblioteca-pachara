@@ -24,15 +24,15 @@ public class BibliotecaApp {
         showMenu(out);
         Scanner scannerIn = new Scanner(in);
         String command = scannerIn.nextLine();
-        String[] splitedCommand = command.split(" ");
+        String[] splitCommand = command.split(" ");
         if (command.equals("List of books")) {
             List<String> listOfBooks = booksManager.getBooksList();
             listOfBooks.forEach(book -> out.println(book));
-        } else if (splitedCommand[0].equals("check-out")) {
-            String[] bookName = Arrays.copyOfRange(splitedCommand, 1, splitedCommand.length);
+        } else if (splitCommand[0].equals("check-out")) {
+            String[] bookName = Arrays.copyOfRange(splitCommand, 1, splitCommand.length);
             out.println(booksManager.checkOutBook(String.join(" ", bookName)));
-        } else if (splitedCommand[0].equals("return")) {
-            String[] bookName = Arrays.copyOfRange(splitedCommand, 1, splitedCommand.length);
+        } else if (splitCommand[0].equals("return")) {
+            String[] bookName = Arrays.copyOfRange(splitCommand, 1, splitCommand.length);
             out.println(booksManager.returnBook(String.join(" ", bookName)));
         } else {
             out.println("Please select a valid option!");
