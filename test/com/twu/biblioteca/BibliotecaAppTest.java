@@ -91,12 +91,21 @@ public class BibliotecaAppTest {
         assertTrue(mockBookManager.checkOutCalled);
     }
 
-
     @Test
     public void shouldCallReturnBookGivenReturnBookCommand() {
         MockBookManager mockBookManager = new MockBookManager(new ArrayList<String>());
         ByteArrayInputStream inStream = new ByteArrayInputStream("return Refactoring".getBytes());
         BibliotecaApp.startApp(inStream, out, mockBookManager);
         assertTrue(mockBookManager.returnBookCalled);
+    }
+
+    @Test
+    public void shouldNotfiedIfGivenInvalidOption() {
+        ByteArrayInputStream inStream = new ByteArrayInputStream("Invalid Option".getBytes());
+
+        BibliotecaApp.startApp(inStream, out, booksManager);
+        String[] outLines = outStream.toString().split("\n");
+        String notifiedMessage = outLines[2];
+        assertEquals("Please select a valid option!", notifiedMessage);
     }
 }
