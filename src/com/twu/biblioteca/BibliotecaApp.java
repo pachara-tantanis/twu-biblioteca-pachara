@@ -6,6 +6,8 @@ import jdk.nashorn.internal.objects.annotations.Function;
 import java.io.InputStream;
 import java.io.PrintStream;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
 public class BibliotecaApp {
 
@@ -17,6 +19,12 @@ public class BibliotecaApp {
     public static void startApp (InputStream in, PrintStream out, BooksManager booksManager) {
         showWelcomeMessage(out);
         showMenu(out);
+        Scanner scannerIn = new Scanner(in);
+        String command = scannerIn.nextLine();
+        if (command.equals("List of books")) {
+            List<String> listOfBooks = booksManager.getBooksList();
+            listOfBooks.forEach(book -> out.println(book));
+        }
     }
 
     private static void showMenu(PrintStream out) {
