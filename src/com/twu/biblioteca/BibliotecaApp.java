@@ -31,7 +31,8 @@ public class BibliotecaApp {
                 listOfBooks.forEach(book -> out.println(book));
             } else if (splitCommand[0].equals("check-out")) {
                 String[] bookName = Arrays.copyOfRange(splitCommand, 1, splitCommand.length);
-                out.println(booksManager.checkOutBook(String.join(" ", bookName)));
+                boolean checkOutResult = booksManager.checkOutBook(String.join(" ", bookName));
+                out.println("Thank you! Enjoy the book");
             } else if (splitCommand[0].equals("return")) {
                 String[] bookName = Arrays.copyOfRange(splitCommand, 1, splitCommand.length);
                 out.println(booksManager.returnBook(String.join(" ", bookName)));
