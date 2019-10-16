@@ -105,7 +105,7 @@ public class BibliotecaAppTest {
     }
 
     @Test
-    public void shouldReturnFailMessageWhenCheckOutReturnFalse() {
+    public void shouldReturnFailMessageWhenCheckOutFalse() {
         MockBookManager mockBookManager = new MockBookManager(new ArrayList<String>());
         ByteArrayInputStream inStream = new ByteArrayInputStream("check-out return false".getBytes());
 
