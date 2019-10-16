@@ -18,28 +18,32 @@ public class BooksManager {
     }
 
     public boolean checkOutBook(String bookName) {
-        for (int i = 0; i < this.listOfBooks.size(); i++) {
-            String[] bookInfo = this.listOfBooks.get(i).split(",");
-
-            if (bookInfo[0].equals(bookName)) {
-                String checkedOutBook = this.listOfBooks.remove(i);
-                this.listOfCheckedOutBook.add(checkedOutBook);
-                return true;
-            }
+        int bookIndex = getBookNameIndexFromList(this.listOfBooks, bookName);
+        if (bookIndex != -1) {
+            String checkedOutBook = this.listOfBooks.remove(bookIndex);
+            this.listOfCheckedOutBook.add(checkedOutBook);
+            return true;
         }
         return false;
     }
 
     public boolean returnBook(String bookName) {
-        for(int i = 0; i < this.listOfCheckedOutBook.size(); i++) {
-            String[] bookInfo = this.listOfCheckedOutBook.get(i).split(",");
-
-            if (bookInfo[0].equals(bookName)) {
-                String returnBook = this.listOfCheckedOutBook.remove(i);
-                this.listOfBooks.add(returnBook);
-                return true;
-            }
+        int bookIndex = getBookNameIndexFromList(this.listOfCheckedOutBook, bookName);
+        if (bookIndex != -1) {
+            String returnBook = this.listOfCheckedOutBook.remove(bookIndex);
+            this.listOfBooks.add(returnBook);
+            return true;
         }
         return false;
+    }
+
+    private int getBookNameIndexFromList(List<String> listOfBooks, String bookName) {
+        for (int i = 0; i < listOfBooks.size(); i++) {
+            String[] bookInfo = listOfBooks.get(i).split(",");
+            if (bookInfo[0].equals(bookName)) {
+                return i;
+            }
+        }
+        return -1;
     }
 }
