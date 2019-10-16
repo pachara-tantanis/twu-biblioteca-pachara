@@ -44,18 +44,19 @@ public class BibliotecaAppTest {
     public BooksManager booksManager;
 
     @Before
-    public void createMockOutput() {
+    public void createMockInputOutput() {
         inputStream = new ByteArrayInputStream("Quit".getBytes());
         outStream = new ByteArrayOutputStream();
         out = new PrintStream(outStream);
+    }
 
+    @Before
+    public void createBookManager() {
         listOfBook = new ArrayList<String>();
         listOfBook.add("Book A,John,1999");
         listOfBook.add("Book B,Alis,2010");
         booksManager = new BooksManager(listOfBook);
-
     }
-
 
     @Test
     public void shouldHaveWelcomeMessageAtFirstLine() {
