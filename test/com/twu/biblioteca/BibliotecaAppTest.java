@@ -26,7 +26,7 @@ public class BibliotecaAppTest {
         @Override
         public boolean checkOutBook(String bookName) {
             checkOutCalled = true;
-            return true;
+            return bookName.equals("return true");
         }
 
         @Override
@@ -90,6 +90,18 @@ public class BibliotecaAppTest {
         ByteArrayInputStream inStream = new ByteArrayInputStream("check-out Refactoring".getBytes());
         BibliotecaApp.startApp(inStream, out, mockBookManager);
         assertTrue(mockBookManager.checkOutCalled);
+    }
+
+    @Test
+    public void shouldReturnSuccessMessageWhenCheckOutSuccess() {
+        MockBookManager mockBookManager = new MockBookManager(new ArrayList<String>());
+        ByteArrayInputStream inStream = new ByteArrayInputStream("check-out return true".getBytes());
+
+        BibliotecaApp.startApp(inStream, out, mockBookManager);
+
+        String[] outLines = outStream.toString().split("\n");
+        String successMessage = outLines[2];
+        assertEquals("Thank you! Enjoy the book", successMessage);
     }
 
     @Test
