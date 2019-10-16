@@ -17,17 +17,17 @@ public class BooksManager {
         return this.listOfBooks;
     }
 
-    public String checkOutBook(String bookName) {
+    public boolean checkOutBook(String bookName) {
         for (int i = 0; i < this.listOfBooks.size(); i++) {
             String[] bookInfo = this.listOfBooks.get(i).split(",");
 
             if (bookInfo[0].equals(bookName)) {
                 String checkedOutBook = this.listOfBooks.remove(i);
                 this.listOfCheckedOutBook.add(checkedOutBook);
-                return "Thank you! Enjoy the book";
+                return true;
             }
         }
-        return "Sorry, that book is not available";
+        return false;
     }
 
     public String returnBook(String bookName) {
