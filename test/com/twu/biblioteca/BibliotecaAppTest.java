@@ -135,7 +135,18 @@ public class BibliotecaAppTest {
         String successMessage = outLines[2];
         assertEquals("Thank you for returning the book", successMessage);
     }
+    
+    @Test
+    public void shouldReturnFailMessageWhenBookReturnFail() {
+        MockBookManager mockBookManager = new MockBookManager(new ArrayList<String>());
+        ByteArrayInputStream inStream = new ByteArrayInputStream("return fail".getBytes());
 
+        BibliotecaApp.startApp(inStream, out, mockBookManager);
+
+        String[] outLines = outStream.toString().split("\n");
+        String failMessage = outLines[2];
+        assertEquals("This is not a valid book to return.", failMessage);
+    }
 
     @Test
     public void shouldNotifiedIfGivenInvalidOption() {
