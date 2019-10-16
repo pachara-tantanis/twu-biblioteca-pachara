@@ -30,13 +30,13 @@ public class BibliotecaApp {
                 List<String> listOfBooks = booksManager.getBooksList();
                 listOfBooks.forEach(book -> out.println(book));
             } else if (splitCommand[0].equals("check-out")) {
-                String[] bookName = Arrays.copyOfRange(splitCommand, 1, splitCommand.length);
-                boolean checkOutResult = booksManager.checkOutBook(String.join(" ", bookName));
+                String bookName = getBookNameFromInput(splitCommand);
+                boolean checkOutResult = booksManager.checkOutBook(bookName);
                 String message = checkOutResult ? "Thank you! Enjoy the book" : "Sorry, that book is not available";
                 out.println(message);
             } else if (splitCommand[0].equals("return")) {
-                String[] bookName = Arrays.copyOfRange(splitCommand, 1, splitCommand.length);
-                out.println(booksManager.returnBook(String.join(" ", bookName)));
+                String bookName = getBookNameFromInput(splitCommand);
+                out.println(booksManager.returnBook(bookName));
             } else if (command.equals("Quit")) {
                 return "quit";
             } else {
@@ -44,6 +44,10 @@ public class BibliotecaApp {
             }
         }
         return "";
+    }
+
+    public static String getBookNameFromInput(String[] splitCommand) {
+        return String.join(" ", Arrays.copyOfRange(splitCommand, 1, splitCommand.length));
     }
 
     public static List<String> readListOfBooks() {
