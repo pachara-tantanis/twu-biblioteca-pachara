@@ -24,15 +24,15 @@ public class BibliotecaAppTest {
         }
 
         @Override
-        public String checkOutBook(String bookName) {
+        public boolean checkOutBook(String bookName) {
             checkOutCalled = true;
-            return "";
+            return true;
         }
 
         @Override
-        public String returnBook(String bookName) {
+        public boolean returnBook(String bookName) {
             returnBookCalled = true;
-            return "";
+            return true;
         }
     }
 

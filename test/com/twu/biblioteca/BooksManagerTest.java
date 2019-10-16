@@ -1,12 +1,13 @@
 package com.twu.biblioteca;
 
-import static org.junit.Assert.assertEquals;
-
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static org.junit.Assert.*;
 
 
 public class BooksManagerTest {
@@ -37,20 +38,20 @@ public class BooksManagerTest {
 
     @Test
     public void shouldReturnSuccessMessageOnCheckOutComplete() {
-        String successMessage = booksManager.checkOutBook("Refactoring");
-        assertEquals("Thank you! Enjoy the book", successMessage);
+        boolean resultTrue = booksManager.checkOutBook("Refactoring");
+        assertTrue(resultTrue);
     }
 
     @Test
     public void shouldReturnUnSuccessMessageOnCheckOutFail() {
-        String unSuccessMessage = booksManager.checkOutBook("UnSuccess");
-        assertEquals("Sorry, that book is not available", unSuccessMessage);
+        boolean resultFalse = booksManager.checkOutBook("UnSuccess");
+        assertFalse(resultFalse);
     }
 
     @Test
     public void shouldReturnUnSuccessMessageOnBookReturnFail() {
-        String returnFailMessage = booksManager.returnBook("ReturnFail");
-        assertEquals("This is not a valid book to return.", returnFailMessage);
+        boolean resultFalse = booksManager.returnBook("ReturnFail");
+        assertFalse(resultFalse);
     }
 
     @Test
@@ -63,8 +64,8 @@ public class BooksManagerTest {
     @Test
     public void shouldReturnSuccessMessageOnBookReturnComplete() {
         booksManager.checkOutBook("Refactoring");
-        String successMessage = booksManager.returnBook("Refactoring");
-        assertEquals("Thank you for returning the book", successMessage);
+        boolean resultTrue = booksManager.returnBook("Refactoring");
+        assertTrue(resultTrue);
     }
 
 }
