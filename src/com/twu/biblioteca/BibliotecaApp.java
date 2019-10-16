@@ -32,7 +32,8 @@ public class BibliotecaApp {
             } else if (splitCommand[0].equals("check-out")) {
                 String[] bookName = Arrays.copyOfRange(splitCommand, 1, splitCommand.length);
                 boolean checkOutResult = booksManager.checkOutBook(String.join(" ", bookName));
-                out.println("Thank you! Enjoy the book");
+                String message = checkOutResult ? "Thank you! Enjoy the book" : "Sorry, that book is not available";
+                out.println(message);
             } else if (splitCommand[0].equals("return")) {
                 String[] bookName = Arrays.copyOfRange(splitCommand, 1, splitCommand.length);
                 out.println(booksManager.returnBook(String.join(" ", bookName)));
