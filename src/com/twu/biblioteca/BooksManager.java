@@ -30,16 +30,16 @@ public class BooksManager {
         return false;
     }
 
-    public String returnBook(String bookName) {
+    public boolean returnBook(String bookName) {
         for(int i = 0; i < this.listOfCheckedOutBook.size(); i++) {
             String[] bookInfo = this.listOfCheckedOutBook.get(i).split(",");
 
             if (bookInfo[0].equals(bookName)) {
                 String returnBook = this.listOfCheckedOutBook.remove(i);
                 this.listOfBooks.add(returnBook);
-                return "Thank you for returning the book";
+                return true;
             }
         }
-        return "This is not a valid book to return.";
+        return false;
     }
 }
