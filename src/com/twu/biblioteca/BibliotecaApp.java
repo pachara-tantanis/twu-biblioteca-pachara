@@ -36,7 +36,8 @@ public class BibliotecaApp {
                 out.println(message);
             } else if (splitCommand[0].equals("return")) {
                 String bookName = getBookNameFromInput(splitCommand);
-                out.println(booksManager.returnBook(bookName));
+                boolean returnResult = booksManager.returnBook(bookName);
+                out.println("Thank you for returning the book");
             } else if (command.equals("Quit")) {
                 return "quit";
             } else {
