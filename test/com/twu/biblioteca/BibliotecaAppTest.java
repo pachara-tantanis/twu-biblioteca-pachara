@@ -32,7 +32,7 @@ public class BibliotecaAppTest {
         @Override
         public boolean returnBook(String bookName) {
             returnBookCalled = true;
-            return true;
+            return bookName.equals("success");
         }
     }
 
@@ -123,6 +123,19 @@ public class BibliotecaAppTest {
         BibliotecaApp.startApp(inStream, out, mockBookManager);
         assertTrue(mockBookManager.returnBookCalled);
     }
+
+    @Test
+    public void shouldReturnSuccessMessageWhenBookReturnSuccess() {
+        MockBookManager mockBookManager = new MockBookManager(new ArrayList<String>());
+        ByteArrayInputStream inStream = new ByteArrayInputStream("return success".getBytes());
+
+        BibliotecaApp.startApp(inStream, out, mockBookManager);
+
+        String[] outLines = outStream.toString().split("\n");
+        String successMessage = outLines[2];
+        assertEquals("Thank you for returning the book", successMessage);
+    }
+
 
     @Test
     public void shouldNotifiedIfGivenInvalidOption() {
