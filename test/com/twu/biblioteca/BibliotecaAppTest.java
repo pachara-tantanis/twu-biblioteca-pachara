@@ -105,6 +105,18 @@ public class BibliotecaAppTest {
     }
 
     @Test
+    public void shouldReturnFailMessageWhenCheckOutReturnFalse() {
+        MockBookManager mockBookManager = new MockBookManager(new ArrayList<String>());
+        ByteArrayInputStream inStream = new ByteArrayInputStream("check-out return false".getBytes());
+
+        BibliotecaApp.startApp(inStream, out, mockBookManager);
+
+        String[] outLines = outStream.toString().split("\n");
+        String failMessage = outLines[2];
+        assertEquals("Sorry, that book is not available", failMessage);
+    }
+
+    @Test
     public void shouldCallReturnBookGivenReturnBookCommand() {
         MockBookManager mockBookManager = new MockBookManager(new ArrayList<String>());
         ByteArrayInputStream inStream = new ByteArrayInputStream("return Refactoring".getBytes());
