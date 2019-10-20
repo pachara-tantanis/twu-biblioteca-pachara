@@ -3,12 +3,12 @@ package com.twu.biblioteca;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BooksManager {
+public class RentalManager {
 
     private List<String> listOfBooks;
     private List<String> listOfCheckedOutBook;
 
-    public BooksManager(List<String> listOfBooks) {
+    public RentalManager(List<String> listOfBooks) {
         this.listOfBooks = listOfBooks;
         this.listOfCheckedOutBook = new ArrayList<String>();
     }

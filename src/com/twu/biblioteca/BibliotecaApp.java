@@ -1,24 +1,20 @@
 package com.twu.biblioteca;
 
 
-import jdk.nashorn.internal.objects.annotations.Function;
-
 import java.io.*;
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
-import java.util.function.IntConsumer;
 
 public class BibliotecaApp {
 
     public static void main(String[] args) {
-        BooksManager booksManager = new BooksManager(readListOfBooks());
+        RentalManager booksManager = new RentalManager(readListOfBooks());
         startApp(System.in, System.out, booksManager);
     }
 
-    public static String startApp(InputStream in, PrintStream out, BooksManager booksManager) {
+    public static String startApp(InputStream in, PrintStream out, RentalManager booksManager) {
         showWelcomeMessage(out);
         showMenu(out);
         Scanner scannerIn = new Scanner(in);

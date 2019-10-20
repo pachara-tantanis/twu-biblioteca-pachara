@@ -1,6 +1,5 @@
 package com.twu.biblioteca;
 
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -10,10 +9,10 @@ import java.util.List;
 import static org.junit.Assert.*;
 
 
-public class BooksManagerTest {
+public class RentalManagerTest {
 
     public List<String> listOfBooks;
-    public BooksManager booksManager;
+    public RentalManager rentalManager;
 
 
     @Before
@@ -21,50 +20,50 @@ public class BooksManagerTest {
         listOfBooks = new ArrayList<String>();
         listOfBooks.add("Refactoring,Kent Beck and Martin Fowler,1999");
         listOfBooks.add("Agile samurai,Jonathan Rasmusson,2010");
-        booksManager = new BooksManager(new ArrayList<String>(listOfBooks));
+        rentalManager = new RentalManager(new ArrayList<String>(listOfBooks));
     }
 
     @Test
     public void shouldReturnAllBooks() {
-        assertEquals(listOfBooks, booksManager.getBooksList());
+        assertEquals(listOfBooks, rentalManager.getBooksList());
     }
 
     @Test
     public void shouldRemoveCheckedOutBookFromListOfBooks() {
         listOfBooks.remove("Refactoring,Kent Beck and Martin Fowler,1999");
-        booksManager.checkOutBook("Refactoring");
-        assertEquals(listOfBooks, booksManager.getBooksList());
+        rentalManager.checkOutBook("Refactoring");
+        assertEquals(listOfBooks, rentalManager.getBooksList());
     }
 
     @Test
     public void shouldReturnSuccessMessageOnCheckOutComplete() {
-        boolean resultTrue = booksManager.checkOutBook("Refactoring");
+        boolean resultTrue = rentalManager.checkOutBook("Refactoring");
         assertTrue(resultTrue);
     }
 
     @Test
     public void shouldReturnUnSuccessMessageOnCheckOutFail() {
-        boolean resultFalse = booksManager.checkOutBook("UnSuccess");
+        boolean resultFalse = rentalManager.checkOutBook("UnSuccess");
         assertFalse(resultFalse);
     }
 
     @Test
     public void shouldReturnUnSuccessMessageOnBookReturnFail() {
-        boolean resultFalse = booksManager.returnBook("ReturnFail");
+        boolean resultFalse = rentalManager.returnBook("ReturnFail");
         assertFalse(resultFalse);
     }
 
     @Test
     public void shouldHaveReturnedBookInlistOfBooks() {
-        booksManager.checkOutBook("Refactoring");
-        booksManager.returnBook("Refactoring");
-        assertEquals(true, booksManager.getBooksList().contains("Refactoring,Kent Beck and Martin Fowler,1999"));
+        rentalManager.checkOutBook("Refactoring");
+        rentalManager.returnBook("Refactoring");
+        assertEquals(true, rentalManager.getBooksList().contains("Refactoring,Kent Beck and Martin Fowler,1999"));
     }
 
     @Test
     public void shouldReturnSuccessMessageOnBookReturnComplete() {
-        booksManager.checkOutBook("Refactoring");
-        boolean resultTrue = booksManager.returnBook("Refactoring");
+        rentalManager.checkOutBook("Refactoring");
+        boolean resultTrue = rentalManager.returnBook("Refactoring");
         assertTrue(resultTrue);
     }
 

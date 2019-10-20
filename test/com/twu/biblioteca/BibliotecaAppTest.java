@@ -15,7 +15,7 @@ import static org.junit.Assert.assertTrue;
 
 public class BibliotecaAppTest {
 
-    class MockBookManager extends BooksManager {
+    class MockBookManager extends RentalManager {
         public Boolean checkOutCalled = false;
         public Boolean returnBookCalled = false;
 
@@ -41,7 +41,7 @@ public class BibliotecaAppTest {
     public PrintStream out;
 
     public List<String> listOfBook;
-    public BooksManager booksManager;
+    public RentalManager rentalManager;
 
     @Before
     public void createMockInputOutput() {
@@ -55,12 +55,12 @@ public class BibliotecaAppTest {
         listOfBook = new ArrayList<String>();
         listOfBook.add("Book A,John,1999");
         listOfBook.add("Book B,Alis,2010");
-        booksManager = new BooksManager(listOfBook);
+        rentalManager = new RentalManager(listOfBook);
     }
 
     @Test
     public void shouldHaveWelcomeMessageAtFirstLine() {
-        BibliotecaApp.startApp(inputStream, out, booksManager);
+        BibliotecaApp.startApp(inputStream, out, rentalManager);
 
         String[] outLines = outStream.toString().split("\n");
         assertEquals("Welcome to Biblioteca. You one-stop-shop for great book titles in Bangalore!", outLines[0]);
@@ -68,7 +68,7 @@ public class BibliotecaAppTest {
 
     @Test
     public void shouldShowMenu() {
-        BibliotecaApp.startApp(inputStream, out, booksManager);
+        BibliotecaApp.startApp(inputStream, out, rentalManager);
 
         String[] outLines = outStream.toString().split("\n");
         assertEquals("List of books", outLines[1]);
@@ -78,7 +78,7 @@ public class BibliotecaAppTest {
     public void shouldReturnListOfBookGivenListOfBook() {
         ByteArrayInputStream inStream = new ByteArrayInputStream("List of books".getBytes());
 
-        BibliotecaApp.startApp(inStream, out, booksManager);
+        BibliotecaApp.startApp(inStream, out, rentalManager);
         String[] outLines = outStream.toString().split("\n");
         String[] outListOfBooks = Arrays.copyOfRange(outLines, 2,outLines.length);
         assertEquals(listOfBook, Arrays.asList(outListOfBooks));
@@ -152,7 +152,7 @@ public class BibliotecaAppTest {
     public void shouldNotifiedIfGivenInvalidOption() {
         ByteArrayInputStream inStream = new ByteArrayInputStream("Invalid Option\n".getBytes());
 
-        BibliotecaApp.startApp(inStream, out, booksManager);
+        BibliotecaApp.startApp(inStream, out, rentalManager);
         String[] outLines = outStream.toString().split("\n");
         String notifiedMessage = outLines[2];
         assertEquals("Please select a valid option!", notifiedMessage);
@@ -160,7 +160,7 @@ public class BibliotecaAppTest {
 
     @Test
     public void shouldQuitGivenQuit() {
-        String quitMessage = BibliotecaApp.startApp(inputStream, out, booksManager);
+        String quitMessage = BibliotecaApp.startApp(inputStream, out, rentalManager);
         assertEquals("quit", quitMessage);
     }
 
